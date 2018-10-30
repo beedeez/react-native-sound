@@ -58,7 +58,8 @@ public class RNSoundModule extends ReactContextBaseJavaModule implements AudioMa
     if (player == null) {
       WritableMap e = Arguments.createMap();
       e.putInt("code", -1);
-      e.putString("message", "resource not found");
+			e.putString("message", "resource not found");
+			callback.invoke(e, NULL);
       return;
     }
     this.playerPool.put(key, player);
